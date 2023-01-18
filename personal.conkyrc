@@ -27,7 +27,7 @@ conky.config = {
 	gap_y = 20,									-- pixels between bottom or left border
 	minimum_height = 3,						-- minimum height of window
 	minimum_width = 700,						-- minimum height of window
-	maximum_width = 700,						-- maximum height of window
+	maximum_width = 730,						-- maximum height of window
 
 	--Graphical
 
@@ -109,7 +109,7 @@ ${if_match ${cpu}<=80} ${color8}${else}\
 ${if_match ${cpu}<=100}${color9}${endif}${endif}${endif}${endif}${endif} \
 ${cpu}%\
 #  - - - - - - - -  CPU Temperature icon will change according to the Temp  - - - - - - - - # need to install acpi
-${voffset 20} ${goto 183} \
+${voffset 23} ${goto 183} \
 ${if_match ${acpitemp}<=60}${color2}${else}\
 ${if_match ${acpitemp}<=80}${color8}${else}\
 ${if_match ${acpitemp}>80} ${color9}${endif}${endif}${endif} \
@@ -117,24 +117,16 @@ ${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font} ${voffset -2} : $
 #  - - - - - - - -  CPU Fanspeed  - - - - - - - -  # search /sys/class/hwmon/hwmon# and edit what u need
 ${offset 5}${color}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font} ${voffset -2} : ${color}${hwmon 5 fan 1} \
 #  - - - - - - - -  M E M O R Y  - - - - - - - -  #
-${voffset -20}${goto 320}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${voffset -2}${offset 2}${color}${mem} (${memperc}%) \
-${voffset 20} ${goto 320}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${offset 2}${color2}${color}${swap} / ${swapmax} \
+${voffset -23}${goto 320}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${voffset -2}${offset 2}${color}${mem} (${memperc}%) \
+${voffset 22} ${goto 320}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${offset 2}${color2}${color}${swapperc}% \
 #  - - - - - - - -   D I S K  - - - - - - - -   # 
-${voffset -22}${goto 420}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${voffset -2} ${color}${offset 2}${fs_used_perc}% \
-#  - - - - - - - -  I N T E R N E T  - - - - - - - -  # cmd : ip addr get ip name enp3s0f3u4 wlp2s0 
-${voffset 22}  ${goto 415} \
-${if_existing /proc/net/route wlp2s0}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${offset 1}${color} Wifi \
-${else}${if_existing /proc/net/route enp3s0f3u4}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${offset 1}${color} Eth \
-${else}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${voffset -2} ${offset 2}${color} X ${endif}${endif} \
-#  - - - - - - - -  Up and Down Speed  - - - - - - - -  #
-${voffset -25}${goto 470}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font} ${upspeed enp3s0f3u4} \
-${voffset 22} ${goto 470}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font} ${downspeed enp3s0f3u4} \
+${offset 5}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${voffset -2} ${color}${offset 2}${fs_used_perc}% \
 #  - - - - - - - -  U P T I M E  - - - - - - - -  #
-${voffset -23}${goto 535}${color3}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${voffset -2} ${color} ${uptime} \
+${voffset -24}${goto 425}${color3}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${voffset -2} ${color} ${uptime} \
 #  - - - - - - - -  T I M E  R E M A I N I N G  - - - - - - - -  # 
-${voffset 23} ${goto 535}${color3}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${voffset -2} ${color}${battery_time BAT1} \
+${voffset 23} ${goto 425}${color3}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${voffset -2} ${color}${battery_time BAT1} \
 #  - - - - - - - -  B A T T E R Y & UPTIME  - - - - - - - -  # # Default is BAT0 you need to install acpi
-${voffset -23}${goto 630} \
+${voffset -23}${goto 520} \
 ${if_match ${battery_percent BAT1}<=10}${color9}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${else}\
 ${if_match ${battery_percent BAT1}<=30}${color4}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${else}\
 ${if_match ${battery_percent BAT1}<=60}${color8}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${else}\
@@ -142,15 +134,23 @@ ${if_match ${battery_percent BAT1}<=80}${color5}${font Font Awesome 6 Free:style
 ${if_match ${battery_percent BAT1}<=100}${color7}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${endif}${endif}${endif}${endif}${endif} \
 ${voffset -2}${offset 1} ${exec acpi | grep -Eo '[0-9]+%'} \
 #  - - - - - - - -  CHARGING OR DISCHARGING  - - - - - - - - #
-${voffset 23}${goto 630} \
+${voffset 23}${goto 520} \
 ${if_match "${exec acpi | grep -Eo '\w+,' | grep -Eo '\w+'}"=="Discharging"}${color9}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${else}\
 ${if_match "${exec acpi | grep -Eo '\w+,' | grep -Eo '\w+'}"=="Charging"}${color7}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${else}\
 ${if_match "${exec acpi | grep -Eo '\w+,' | grep -Eo '\w+'}"=="Full"}${color7}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${endif}${endif}${endif} \
 #  - - - - - - - -  P O W E R _ G O V E R N O R  - - - - - - - -  #
-${voffset -2}${goto 650} \
+${voffset -2}${goto 540}${color} \
 ${if_match "${exec cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor}"=="powersave"}${color7}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${else}\
 ${if_match "${exec cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor}"=="conservative"}${color7}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${else}\
 ${if_match "${exec cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor}"=="schedutil"}${color8}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${else}\
-${if_match "${exec cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor}"=="performance"}${color9}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${endif}${endif}${endif}${endif}
+${if_match "${exec cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor}"=="performance"}${color9}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${endif}${endif}${endif}${endif}\
+#  - - - - - - - -  I N T E R N E T  - - - - - - - -  # cmd : ip addr get ip name enp3s0f3u4 wlp2s0 
+${voffset -25}${goto 590}${color} \
+${if_existing /proc/net/route wlp2s0}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${offset 1}${color}${addrs wlp2s0} \
+${else}${if_existing /proc/net/route enp3s0f3u4}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${offset 1}${color}${addrs enp3s0f3u4} \
+${else}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${voffset -2} ${offset 2}${color} Network Disconnected ${endif}${endif} \
+#  - - - - - - - -  Up and Down Speed  - - - - - - - -  #
+${voffset 20}${goto 600}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font} ${upspeed enp3s0f3u4} \
+${voffset -1.5}${goto 660}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font} ${downspeed enp3s0f3u4} \
 ]];
 
