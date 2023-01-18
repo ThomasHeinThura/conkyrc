@@ -26,8 +26,8 @@ conky.config = {
 	gap_x = 0,									-- pixels between right or left border
 	gap_y = 20,									-- pixels between bottom or left border
 	minimum_height = 3,						-- minimum height of window
-	minimum_width = 900,						-- minimum height of window
-	maximum_width = 900,						-- maximum height of window
+	minimum_width = 700,						-- minimum height of window
+	maximum_width = 700,						-- maximum height of window
 
 	--Graphical
 
@@ -101,56 +101,56 @@ conky.text = [[
 ${voffset -10}${goto 30} ${color6}${font GE Inspira:size=20}${time %l}:${time %M} ${time %p}${font}${color} \
 ${voffset 20} ${goto 5}  ${color6}${font GE Inspira:size=10}${time %A} ${time %B} ${time %e}, ${time %Y}${font}${color} \
 #  - - - - - - - -  C P U  - - - - - - - - #
-${voffset -23}${goto 203}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font} ${voffset -2}${offset 1} ${color}${freq_g}GHz | \
+${voffset -23}${goto 190}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font} ${voffset -2}${offset 1} ${color}${freq_g}GHz | \
 ${if_match ${cpu}<=10} ${color6}${else}\
 ${if_match ${cpu}<=30} ${color2}${else}\
 ${if_match ${cpu}<=60} ${color4}${else}\
 ${if_match ${cpu}<=80} ${color8}${else}\
 ${if_match ${cpu}<=100}${color9}${endif}${endif}${endif}${endif}${endif} \
-${cpu}% \
-#  - - - - - - - -  CPU Temperature icon will change according to the Temp  - - - - - - - -  #
-${voffset 20} ${goto 200} \
-${if_match ${i8k_cpu_temp}<=60}${color2}${else}\
-${if_match ${i8k_cpu_temp}<=80}${color8}${else}\
-${if_match ${i8k_cpu_temp}>80} ${color9}${endif}${endif}${endif} \
-${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font} ${voffset -2} : ${i8k_cpu_temp}°C \
-#  - - - - - - - -  CPU Fanspeed  - - - - - - - -  #
-${offset 5}${color}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font} ${voffset -2} : ${color}${i8k_right_fan_rpm} \
+${cpu}%\
+#  - - - - - - - -  CPU Temperature icon will change according to the Temp  - - - - - - - - # need to install acpi
+${voffset 20} ${goto 183} \
+${if_match ${acpitemp}<=60}${color2}${else}\
+${if_match ${acpitemp}<=80}${color8}${else}\
+${if_match ${acpitemp}>80} ${color9}${endif}${endif}${endif} \
+${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font} ${voffset -2} : ${acpitemp}°C \
+#  - - - - - - - -  CPU Fanspeed  - - - - - - - -  # search /sys/class/hwmon/hwmon# and edit what u need
+${offset 5}${color}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font} ${voffset -2} : ${color}${hwmon 5 fan 1} \
 #  - - - - - - - -  M E M O R Y  - - - - - - - -  #
-${voffset -20}${goto 360}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${voffset -2}${offset 2}${color}${mem} / ${memmax} \
-${voffset 20} ${goto 360}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${offset 2}${color2}${color}${swap} / ${swapmax} \
+${voffset -20}${goto 320}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${voffset -2}${offset 2}${color}${mem} (${memperc}%) \
+${voffset 20} ${goto 320}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${offset 2}${color2}${color}${swap} / ${swapmax} \
 #  - - - - - - - -   D I S K  - - - - - - - -   # 
-${voffset -22}${goto 470}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${voffset -2} ${color}${offset 2}${fs_used /} | ${fs_size /} \
-#  - - - - - - - -  I N T E R N E T  - - - - - - - -  #
-${voffset 22}  ${goto 465} \
-${if_match "${addr wlp2s0}"!="No Address"}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${else}\
-${if_match "${addr wlp2s0}"=="No Address"}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${endif}${endif} \
-${voffset -2}${offset 2}${color}${addrs wlp2s0} \
+${voffset -22}${goto 420}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${voffset -2} ${color}${offset 2}${fs_used_perc}% \
+#  - - - - - - - -  I N T E R N E T  - - - - - - - -  # cmd : ip addr get ip name enp3s0f3u4 wlp2s0 
+${voffset 22}  ${goto 415} \
+${if_existing /proc/net/route wlp2s0}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${offset 1}${color} Wifi \
+${else}${if_existing /proc/net/route enp3s0f3u4}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${offset 1}${color} Eth \
+${else}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${voffset -2} ${offset 2}${color} X ${endif}${endif} \
 #  - - - - - - - -  Up and Down Speed  - - - - - - - -  #
-${voffset -25}${goto 600}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font} ${upspeed wlp2s0} (${totalup wlp2s0}) \
-${voffset 22} ${goto 600}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font} ${downspeed wlp2s0} (${totaldown wlp2s0}) \
+${voffset -25}${goto 470}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font} ${upspeed enp3s0f3u4} \
+${voffset 22} ${goto 470}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font} ${downspeed enp3s0f3u4} \
 #  - - - - - - - -  U P T I M E  - - - - - - - -  #
-${voffset -23}${goto 710}${color3}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${voffset -2} ${color} ${uptime} \
+${voffset -23}${goto 535}${color3}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${voffset -2} ${color} ${uptime} \
 #  - - - - - - - -  T I M E  R E M A I N I N G  - - - - - - - -  # 
-${voffset 23} ${goto 710}${color3}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${voffset -2} ${color}${battery_time BAT1} \
-#  - - - - - - - -  B A T T E R Y & UPTIME  - - - - - - - -  #
-${voffset -23}${goto 810} \
+${voffset 23} ${goto 535}${color3}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${voffset -2} ${color}${battery_time BAT1} \
+#  - - - - - - - -  B A T T E R Y & UPTIME  - - - - - - - -  # # Default is BAT0 you need to install acpi
+${voffset -23}${goto 630} \
 ${if_match ${battery_percent BAT1}<=10}${color9}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${else}\
 ${if_match ${battery_percent BAT1}<=30}${color4}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${else}\
 ${if_match ${battery_percent BAT1}<=60}${color8}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${else}\
 ${if_match ${battery_percent BAT1}<=80}${color5}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${else}\
 ${if_match ${battery_percent BAT1}<=100}${color7}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${endif}${endif}${endif}${endif}${endif} \
-${voffset -2}${offset 2} ${exec acpi | grep -Eo '[0-9]+%'} \
+${voffset -2}${offset 1} ${exec acpi | grep -Eo '[0-9]+%'} \
 #  - - - - - - - -  CHARGING OR DISCHARGING  - - - - - - - - #
-${voffset 23}${goto 810} \
+${voffset 23}${goto 630} \
 ${if_match "${exec acpi | grep -Eo '\w+,' | grep -Eo '\w+'}"=="Discharging"}${color9}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${else}\
 ${if_match "${exec acpi | grep -Eo '\w+,' | grep -Eo '\w+'}"=="Charging"}${color7}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${else}\
 ${if_match "${exec acpi | grep -Eo '\w+,' | grep -Eo '\w+'}"=="Full"}${color7}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${endif}${endif}${endif} \
 #  - - - - - - - -  P O W E R _ G O V E R N O R  - - - - - - - -  #
-${voffset -2}${goto 830} \
+${voffset -2}${goto 650} \
 ${if_match "${exec cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor}"=="powersave"}${color7}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${else}\
 ${if_match "${exec cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor}"=="conservative"}${color7}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${else}\
 ${if_match "${exec cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor}"=="schedutil"}${color8}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${else}\
-${if_match "${exec cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor}"=="performance"}${color9}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${endif}${endif}${endif}${endif}\
+${if_match "${exec cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor}"=="performance"}${color9}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font}${endif}${endif}${endif}${endif}
 ]];
 
