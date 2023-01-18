@@ -1,5 +1,5 @@
 # Introduction
-These are the personal conky config files and highly customize for checking Resource usage on time. Before using these config files, highly recommend looking up the file and fixing it for your need.
+These are the personal conky config files and highly customize for checking Resource usage on time. Before using these config files, strongly recommend looking up the file and fixing it for your need.
 
 There are 4 config files.
 * lite_top.conkyrc 
@@ -7,13 +7,13 @@ There are 4 config files.
 * zoric.conkyrc
 * note.conkyrc 
 
-**The screenshots**
-With charger: ![lite_top](screenshot/lite_top.png)
-With no charger : ![unplug](screenshot/unplug.png)
-![sky_blue](screenshot/sky_blue.png)
-![zoric](screenshot/zoric.png)
-![note](screenshot/note.png)
-![The whole](screenshot/whole.png)
+**The screenshots**  
+With charger: ![lite_top](screenshot/lite_top.png)  
+With no charger: ![unplug](screenshot/unplug.png)  
+![sky_blue](screenshot/sky_blue.png)  
+![zoric](screenshot/zoric.png)  
+![note](screenshot/note.png)  
+![The whole](screenshot/whole.png)  
 
 ## Requirements
 * ACPI software on Linux.
@@ -24,7 +24,7 @@ With no charger : ![unplug](screenshot/unplug.png)
 ## Note
 * You can customize the whole config setup if you know basic [conkyrc config variables](https://conky.sourceforge.net/variables.html)
 * Zoric is the basic one and doesn't contain much complex code.
-* sky_blue contains commented codes which also Nvidia GPU usage, memory and GPU resources. 
+* sky_blue contains many commented codes which also commented Nvidia GPU usage, memory and GPU resources. 
 * lite_top may be beautiful but it needs to fix a lot of positional fixes. It contains so many if-else states and complicated code. Also, icons change in some conditions.
 * the note is for acting as a sticky note. 
 
