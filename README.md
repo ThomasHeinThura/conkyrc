@@ -19,7 +19,7 @@ With no charger: ![unplug](screenshot/unplug.png)
 * ACPI software on Linux.
 * Font Awesome 6 Free -- for showing icons in lite-top.
 * cpu_power software -- for changing the power governor easily
-* Nvidia driver -- for using sky_blue to show Nvidia GPU status.
+* Nvidia driver and Nvidia settings -- for using sky_blue to show Nvidia GPU status.
 * fdisk -- for getting names of HDD and SSD easily. (not necessary)
 * lm_sensors -- in some tricky conditions, lm_sensors help to use `sensors` command for showing many other temps and fan speeds.
 * Some cmd line to check the hardware of your pc or laptop
