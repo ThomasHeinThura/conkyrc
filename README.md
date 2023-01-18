@@ -24,7 +24,7 @@ With no charger: ![unplug](screenshot/unplug.png)
 ## Note
 * You can customize the whole config setup if you know basic [conkyrc config variables](https://conky.sourceforge.net/variables.html)
 * Zoric is the basic one and doesn't contain much complex code.
-* sky_blue contains many commented codes which also commented Nvidia GPU usage, memory and GPU resources. 
+* sky_blue contains many commented codes which also commented on Nvidia GPU usage, memory and GPU resources. 
 * lite_top may be beautiful but it needs to fix a lot of positional fixes. It contains so many if-else states and complicated code. Also, icons change in some conditions.
 * the note is for acting as a sticky note. 
 
