@@ -11,6 +11,9 @@ There are 4 conkyrc files.
 * note.conkyrc 
   ![note.conkyrc](screenshot/note.png)
 
+**The whole screenshot**
+![The whole](screenshot/whole.png)
+
 ## Requirements
 * ACPI software on Linux.
 * Some cmd line to check the hardware of your pc or laptop
