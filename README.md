@@ -3,18 +3,15 @@ This is the personal conkyrc file and highly customize for checking Resource usa
 
 There are 4 conkyrc files.
 * lite_top.conkyrc 
-![lite_top](screenshot/lite_top.png)
-
 * sky_blue.conkyrc
-![sky_blue.conkyrc](screenshot/sky_blue.png)
-
 * zoric.conkyrc
-![zoric.conkyrc](screenshot/zoric.png)
-
 * note.conkyrc 
-![note.conkyrc](screenshot/note.png)
 
-**The whole screenshot**
+**The screenshots**
+![lite_top](screenshot/lite_top.png)
+![sky_blue.conkyrc](screenshot/sky_blue.png)
+![zoric.conkyrc](screenshot/zoric.png)
+![note.conkyrc](screenshot/note.png)
 ![The whole](screenshot/whole.png)
 
 ## Requirements
