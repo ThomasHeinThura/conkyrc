@@ -1,5 +1,5 @@
 # Introduction
-These are the personal conky config files and highly customize for checking Resource usage on time. Before using these config files, strongly recommend looking up the file and fixing it for your need.
+These are the personalize conky config files and highly customize for checking Resource usage on time. Before using these config files, strongly recommend looking up the file and fixing it for your need.
 
 There are 4 config files.
 * lite_top.conkyrc 
