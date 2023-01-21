@@ -41,7 +41,7 @@ With no charger: ![unplug](screenshot/unplug.png)
 * You need to install `acpi` software to show CPU temp.   
 * You need to know `hwmon` number to show CPU temp and fan speed. You can search `hwmon` by locating `/sys/class/hwmon/hwmon#`. you can find the fan number and CPU number in that.   
 * If you install `acpi`, the battery percentage will work. If the battery percentage icon is not working, Change BAT1 to BAT0. 
-* Power governors are advanced level and icons are set for power_save, conservative, schedutils and performance. For easily changing the power governors install `cpupower`. Then, to change the governor, type these command:  **Be careful this is sudo command**  
+* Power governors are advanced level and icons are set for power_save, conservative, schedutils and performance. For easily changing the power governors install `cpupower`. Then, to change the governor, type this command:  **Be careful this is sudo command**  If you don't type sudo(some don't want to type) install `cpupower-gui` and config the governors. 
 
         sudo cpupower frequency-set -g <name_of_your_governor>
 * It is for sure the internet is needed to fix. You need to edit the correct IP name to show the IP address, upload and download speed. To get the correct name type `ip addr` in your terminal and get the name. You will see `192.168.xx.xxx`, take `wlpxxx` for wifi and `enpxxx` for ethernet. 
