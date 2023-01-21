@@ -47,7 +47,7 @@ With no charger: ![unplug](screenshot/unplug.png)
 * It is for sure the internet is needed to fix. You need to edit the correct IP name to show the IP address, upload and download speed. To get the correct name type `ip addr` in your terminal and get the name. You will see `192.168.xx.xxx`, take `wlpxxx` for wifi and `enpxxx` for ethernet. 
 * For disk read and write, you need to get your SSD or HDD name. Install `fdisk` and type `sudo fdisk -l` and get all of your HDD and SSD names. Then, change in `/dev/xxx` to show your disk_read and write speed. You can add multiple HDDs and SSDs.
 * It is for sure icons and texts are misplaced in lite_top because of using `voffset` and `goto`. If they are misplaced. It can be easily fixed by adjusting the `voffset` and `goto`. 
-*  The size and location of the conky can be changed `alignment`. 
+*  The location of the conky can be changed `alignment`. 
 *  If you don't want to show conky in every tag or window just remove `sticky` in `own_window_hints`.
 *  For size, you can adjust the `minimum_height`, `minimum_width`, `maximum_width`.
 * If you want to add MPD player and other fancy things, just google, take the example conky you like and fix the code. There are plenty of beautiful conkys out there. even in the original conky GitHub. 
