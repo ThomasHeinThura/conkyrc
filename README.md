@@ -1,5 +1,5 @@
 # Introduction
-These are the personalize conky config files and highly customize for checking Resource usage on time. Before using these config files, strongly recommend looking up the file and fixing it for your need.
+These are the personalized conky config files and highly customize for checking Resource usage on time. Before using these config files, strongly recommend looking up the file and fixing it for your need.
 
 There are 4 config files.
 * lite_top.conkyrc 
@@ -32,7 +32,7 @@ With no charger: ![unplug](screenshot/unplug.png)
 * the note is for acting as a sticky note. 
 
 ### Customize
-* If you are very good at customizing config files, you don't really need to read these customization steps. In conky, you can customize many ways for one thing. This is beauty of conky. 
+* If you are very good at customizing config files, you don't really need to read these customization steps. In conky, you can customize many ways for one thing. This is the beauty of conky. 
 * First, you need to search if is everything working by running the config file.
 
             conky -c lite_top.conkyrc
