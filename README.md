@@ -3,15 +3,15 @@ These are the personal conky config files and highly customize for checking Reso
 
 There are 4 config files.
 * lite_top.conkyrc 
-* sky_blue.conkyrc
-* zoric.conkyrc
+* sky_blue.conkyrc  
+* zoric.conkyrc from (https://github.com/MarkMcCoskey/ZorinConky) 
 * note.conkyrc 
 
 **The screenshots**  
 With charger: ![lite_top](screenshot/lite_top.png)  
 With no charger: ![unplug](screenshot/unplug.png)  
 ![sky_blue](screenshot/sky_blue.png)
-![zoric](screenshot/zoric.png)  
+![zoric](screenshot/zoric.png) 
 ![note](screenshot/note.png)  
 ![The whole](screenshot/whole.png)  
 
@@ -27,7 +27,7 @@ With no charger: ![unplug](screenshot/unplug.png)
 ## Note
 * You can customize the whole config setup if you know basic [conkyrc config variables](https://conky.sourceforge.net/variables.html)
 * Zoric is the basic one and doesn't contain much complex code.
-* sky_blue contains many commented codes which also commented on Nvidia GPU usage, memory and GPU resources. If you want to use, you need to uncomment these Nvidia lines.
+* sky_blue contains many commented codes which also commented on Nvidia GPU usage, memory and GPU resources. If you want to use it, you need to uncomment these Nvidia lines.
 * lite_top may be beautiful but it needs to fix a lot of positional fixes. It contains so many if-else states and complicated code. Also, icons change in some conditions.
 * the note is for acting as a sticky note. 
 
@@ -48,4 +48,4 @@ With no charger: ![unplug](screenshot/unplug.png)
 *  If you don't want to show conky in every tag or window just remove `sticky` in `own_window_hints`.
 *  For size, you can adjust the `minimum_height`, `minimum_width`, `maximum_width`.
 * If you want to add MPD player and other fancy things, just google, take the example conky you like and fix the code. There are plenty of beautiful conkys out there. even in the original conky GitHub. 
-# Then, Enjoy your conky. 
+#  Enjoy your conky. 
