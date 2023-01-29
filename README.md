@@ -38,7 +38,7 @@ With no charger: ![unplug](screenshot/unplug.png)
             conky -c lite_top.conkyrc
 * Then fix which are not working. Mostly likely CPU temp, fan speed, external_hdd, battery and network may not work out of the box. Because these are specific names and not the same from computer to computer. 
 * CPU, Memory, uptime and disk usage are sure to work. Because these are basic names. 
-* You need to install `acpi` software to show CPU temp.   
+* You need to install `acpi` software to show CPU temp. If cpu temp is not working change ` i8k_cpu_temp` to `acpitemp` or add `execi senseors | grep ****` command.
 * You need to know `hwmon` number to show CPU temp and fan speed. You can search `hwmon` by locating `/sys/class/hwmon/hwmon#`. you can find the fan number and CPU number in that.   
 * If you install `acpi`, the battery percentage will work. If the battery percentage icon is not working, Change BAT1 to BAT0. 
 * Power governors are advanced level and icons are set for power_save, conservative, schedutils and performance. For easily changing the power governors install `cpupower`. Then, to change the governor, type this command:  **Be careful this is sudo command**  If you don't want to type sudo(some don't want to type) install `cpupower-gui` and config the governors. 
