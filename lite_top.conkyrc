@@ -110,10 +110,10 @@ ${if_match ${cpu}<=100}${color9}${endif}${endif}${endif}${endif}${endif} \
 ${cpu}%\
 #  - - - - - - - -  CPU Temperature icon will change according to the Temp  - - - - - - - - # need to install acpi
 ${voffset 23} ${goto 183} \
-${if_match ${acpitemp}<=60}${color2}${else}\
-${if_match ${acpitemp}<=80}${color8}${else}\
-${if_match ${acpitemp}>80} ${color9}${endif}${endif}${endif} \
-${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font} ${voffset -2} : ${acpitemp}°C \
+${if_match ${i8k_cpu_temp}<=60}${color2}${else}\
+${if_match ${i8k_cpu_temp}<=80}${color8}${else}\
+${if_match ${i8k_cpu_temp}>80} ${color9}${endif}${endif}${endif} \
+${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font} ${voffset -2} : ${i8k_cpu_temp}°C \
 #  - - - - - - - -  CPU Fanspeed  - - - - - - - -  # search /sys/class/hwmon/hwmon# and edit what u need
 ${offset 5}${color}${font Font Awesome 6 Free:style=Solid:pixelsize=13}${font} ${voffset -2} : ${color}${hwmon 5 fan 1} \
 #  - - - - - - - -  M E M O R Y  - - - - - - - -  #
